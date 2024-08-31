@@ -139,4 +139,40 @@ public class java {
         System.out.println("length is:"+m);
 }
 }
+14.
+package saijava;
+import java.util.Scanner;
+public class java {
+	public static void main(String[] args)
+	{
+		Scanner input=new Scanner(System.in);
+		int uc=0;
+		int lc=0;
+		int nc=0;
+		char c;
+		while(true)
+		{
+			c=input.next().charAt(0);
+			if(c=='*')
+			{
+				break;
+			}
+			if(Character.isUpperCase(c))
+			{
+				uc++;
+			}
+			else if(Character.isLowerCase(c))
+			{
+			lc++;
+			}
+			else if(Character.isDigit(c))
+			{
+				nc++;
+			}
+		}
+		System.out.println("uppercase count is:"+uc);
+		System.out.println("lower case count is:"+lc);
+		System.out.println("numbers are:"+nc);
+}
+}
 
