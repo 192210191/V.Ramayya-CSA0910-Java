@@ -102,6 +102,48 @@ public class java {
 	}
 }
 }
+8.
+class bank_account
+{
+  String name;
+  int acc;
+  int balance;
+  bank_account(String s,int a,int b)
+  {
+    name=s;
+    acc=a;
+    balance=b;
+  }
+  public void deposit(int money)
+  {
+    balance+=money;
+  }
+  public void withdraw(int m1)
+  {
+    balance-=m1;
+  }
+  public void display()
+  {
+    System.out.println("name is:"+name);
+    System.out.println("acc nu is:"+acc);
+    System.out.println("money after deposit:"+balance);
+  }
+}
+public class R192210191
+{
+  public static void main(String[] args)
+  {
+    int acc=1234;
+    int bal=12000;
+    String name="sai";
+    int w=1200;
+    int d=2000;
+    bank_account bank=new bank_account(name,acc,bal);
+    bank.deposit(d);
+    bank.withdraw(w);
+    bank.display();
+  }
+}
 13.
   package saijava;
 import java.util.Arrays;
