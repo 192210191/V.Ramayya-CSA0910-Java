@@ -1,8 +1,7 @@
 package saijava;
-import java.util.Scanner;
-class a extends Thread
+class a implements Runnable
 {
-	public void get()
+	public void run()
 	{
 		int n=6;
 		int a=0;int b=1;
@@ -16,11 +15,12 @@ class a extends Thread
 		}
 	}
 }
-public class practice
+public class java
 {
 	public static void main(String[] arg)
 	{
 		a obj=new a();
-		obj.get();
+		Thread thread=new Thread(obj);
+		thread.start();
 	}
 }
