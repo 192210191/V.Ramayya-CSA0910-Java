@@ -1,0 +1,387 @@
+1.student constructor concept
+import java.util.Scanner;
+public class R192210191
+{
+  String s;
+  int age;
+  int salary;
+  int m1;
+  int m2;
+  public R192210191(String s1, int age1, int salary1, int m11, int m21) {
+        s = s1;
+        age = age1;
+        salary = salary1;
+        m1 = m11;
+        m2 = m21;
+  }
+  public void grade()
+  {
+    double avg=(m1+m2)/2.0;
+    if(avg>90)
+    {
+      System.out.println("A grade");
+    }
+    else if(avg>80)
+    {
+      System.out.println("b grade");
+    }
+    else if(avg>70)
+    {
+      System.out.println("C grade");
+    }
+    else
+    {
+      System.out.println("fail");
+    }
+    System.out.println("name is:"+s);
+    System.out.println("age is:"+age);
+    System.out.println("avg is:"+avg);
+  }
+  public static void main(String[] arg)
+  {
+    Scanner input=new Scanner(System.in);
+    System.out.println("Enter name: ");
+        String name = input.nextLine();
+        
+        System.out.println("Enter age: ");
+        int age = input.nextInt();
+        
+        System.out.println("Enter salary: ");
+        int salary = input.nextInt();
+        
+        System.out.println("Enter marks 1: ");
+        int m1 = input.nextInt();
+        
+        System.out.println("Enter marks 2: ");
+        int m2 = input.nextInt();
+    R192210191 student=new R192210191(name,age,salary,m1,m2);
+    student.grade();
+  }
+}
+2.car constructor
+import java.util.Scanner;
+public class R192210191 
+{
+    String make;
+    String model;
+    int year;
+
+    R192210191(String mk, String mdl, int y) {
+        make = mk;
+        model = mdl;
+        year = y;
+    }
+
+    public void getDetails() {
+        System.out.println("Make of the car is " + make);
+        System.out.println("Model of the car is " + model);
+        System.out.println("Year of the car is " + year);
+ 
+    }
+
+    public static void main(String[] args) 
+    {
+      Scanner input = new Scanner(System.in);
+        System.out.print("Enter the make: ");
+        String make = input.nextLine();  
+        System.out.print("Enter the model: ");
+        String model = input.nextLine();  
+        System.out.print("Enter the year: ");
+        int year = input.nextInt(); 
+        R192210191 car = new R192210191(make,model,year);
+        car.getDetails();
+    }
+}
+3.rectangle const
+import java.util.Scanner;
+public class R192210191
+{
+  int l;
+  int w;
+  Scanner input=new Scanner(System.in);
+  public R192210191()
+  {
+   l=input.nextInt();
+   w=input.nextInt();
+  }
+  public void display()
+  {
+    int area=l*w;
+    System.out.println("area of rectangle is:"+area);
+  }
+  public static void main(String[] arg)
+  {
+    R192210191 obj=new R192210191();
+    obj.display();
+  }
+}
+4.overriding example
+class Calculator {
+    public double add(double a, double b) {
+        return a + b;
+    }
+    public double subtract(double a, double b) {
+        return a - b;
+    }
+    public double multiply(double a, double b) {
+        return a * b;
+    }
+    public double divide(double a, double b) {
+        if (b != 0) {
+            return a / b;
+        } else {
+            System.out.println("Error: Division by zero");
+            return 0;
+        }
+    }
+}
+class ScientificCalculator extends Calculator {
+    public double multiply(double a, double b) {
+        double result = Math.sqrt(a * b);
+        return result;
+    }
+}
+
+public class R192210191 {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        System.out.println("Simple Calculator Operations:");
+        System.out.println("Add: " + calc.add(10, 5));
+        System.out.println("Subtract: " + calc.subtract(10, 5));
+        System.out.println("Multiply: " + calc.multiply(10, 5));
+        System.out.println("Divide: " + calc.divide(10, 5));
+        ScientificCalculator sciCalc = new ScientificCalculator();
+        System.out.println("\nScientific Calculator Operations:");
+        System.out.println("Add: " + sciCalc.add(10, 5));
+        System.out.println("Subtract: " + sciCalc.subtract(10, 5));
+        System.out.println("Multiply (complex operation): " + sciCalc.multiply(10, 5));
+        System.out.println("Divide: " + sciCalc.divide(10, 5));
+    }
+}
+5.overloading example
+public class R192210191
+{
+  public static int sum(int... numbers)
+  {
+    int total=0;
+    for(int num:numbers)
+    {
+      total+=num;
+    }
+    return total;
+  }
+  public static double add(double... numbers)
+  {
+    double total=0.0;
+    for(double num:numbers)
+    {
+      total+=num;
+    }
+    return total;
+  }
+  public static void main(String[] arg)
+  {
+    int sum=sum(1,2,3,4);
+    System.out.println("sum is:"+sum);
+    double add=add(1.2,3,4.5,6.7);
+    System.out.println("double add is:"+add);
+  }
+}
+6.Write a Java program to demonstrate polymorphism with abstract classes.
+Create an abstract class called Animal with abstract methods such as eat() and sleep().
+Then, create child classes such as Dog and Cat that inherit from the Animal class and implement their own versions of the eat() and sleep() methods.
+abstract class animal
+{
+  abstract void eat();
+  abstract void sleep();
+}
+class dog extends animal
+{
+public void eat()
+{
+System.out.println("dot eat meat");
+}
+public void sleep()
+{
+System.out.println("dog might sleep");
+}
+}
+class cat extends animal
+{
+public void eat()
+{
+System.out.println("dot eat meat and fish");
+}
+public void sleep()
+{
+System.out.println("dog might sleep and roam");
+}
+}
+public class R192210191
+{
+  public static void main(String[] arg)
+  {
+    animal obj=new dog();
+    obj.eat();
+    obj.sleep();
+    animal obj1=new cat();
+    obj1.eat();
+    obj1.sleep();
+  }
+}
+8.Write a Java program to demonstrate polymorphism with interfaces.
+Create an interface called Drawable with a method called draw().
+Then, create classes such as Circle and Square that implement the Drawable interface and have their own unique implementations of the draw() method.
+  interface drawable
+{
+  void draw();
+}
+class circle implements drawable
+{
+public void draw()
+{
+System.out.println("good color");
+}
+}
+class square implements drawable
+{
+public void draw()
+{
+System.out.println("bad colour");
+}
+}
+public class R192210191
+{
+  public static void main(String[] arg)
+  {
+    drawable obj=new circle();
+    obj.draw();
+    drawable obj1=new square();
+    obj1.draw();
+  }
+}
+9.Write a Java program to implement a basic employee management system using inheritance.
+Create a parent class called Employee with attributes such as name, id, and salary.
+Then, create child classes such as Manager and SalesPerson that inherit from the Employee class and have their own unique methods for managing teams and making sales.
+  class Employee {
+    String name;
+    int id;
+    double salary;
+    public Employee(String n, int i, double s) {
+        name = n;
+        id = i;
+        salary = s;
+    }
+    public void displayDetails() {
+        System.out.println("Employee Name: " + name);
+        System.out.println("Employee ID: " + id);
+        System.out.println("Salary: " + salary);
+    }
+}
+class Manager extends Employee {
+    String department;
+    public Manager(String name, int id, double salary, String department) {
+        super(name, id, salary);
+        this.department = department;
+    }
+    public void manageTeam() {
+        System.out.println(name + " is managing the team in the " + department + " department.");
+    }
+    public void displayDetails() {
+        super.displayDetails();
+        System.out.println("Department: " + department);
+    }
+}
+class SalesPerson extends Employee {
+    double salesTarget;
+    public SalesPerson(String name, int id, double salary, double salesTarget) {
+        super(name, id, salary);
+        this.salesTarget = salesTarget;
+    }
+    public void makeSale(double saleAmount) {
+        System.out.println(name + " made a sale of " + saleAmount);
+        if (saleAmount >= salesTarget) {
+            System.out.println("Sales target met!");
+        } else {
+            System.out.println("Sales target not met.");
+        }
+    }
+    public void displayDetails() {
+        super.displayDetails();
+        System.out.println("Sales Target: " + salesTarget);
+    }
+}
+public class R192210191 {
+    public static void main(String[] args) {
+        Manager manager = new Manager("Alice", 101, 80000, "IT");
+        manager.displayDetails();
+        manager.manageTeam();
+        System.out.println();
+        SalesPerson salesPerson = new SalesPerson("Bob", 102, 50000, 10000);
+        salesPerson.displayDetails();
+        salesPerson.makeSale(12000);
+    }
+}
+
+10.import java.util.Scanner;
+class Account{
+    int accountnum;
+    String name;
+    double balance;
+    
+    public Account(int a, double b, String n) {
+        accountnum = a;
+        balance = b;
+        name = n;
+    }
+    public void displayAccountDetails() {
+        System.out.println("Account Holder: " + name);
+        System.out.println("Account Number: " + accountnum);
+        System.out.println("Balance: " + balance);
+    }
+}
+class SavingsAccount extends Account {
+    public SavingsAccount(int a, double b, String n) {
+        super(a, b, n);
+    }
+    public void withdraw(int with) {
+            balance -= with;
+            System.out.println("Withdrawal successful. New balance: " + balance);
+        
+    }
+    public void deposit(int depo) {
+        balance += depo;
+        System.out.println("Deposit successful. New balance: " + balance);
+    }
+}
+class CheckingAccount extends Account {
+    public CheckingAccount(int a, double b, String n) {
+        super(a, b, n);
+    }
+    public void withdraw(int with) {
+        
+            balance -= with;
+            System.out.println("Withdrawal successful. New balance: " + balance);        
+    }
+    public void deposit(int depo) {
+        
+        balance += depo;
+        System.out.println("Deposit successful. New balance: " + balance);
+    }
+}
+public class R192210191
+{
+    public static void main(String[] args) {
+      Scanner input = new Scanner(System.in);
+        int d=input.nextInt();
+        SavingsAccount savings = new SavingsAccount(1234, 10000, "Sai");
+        savings.displayAccountDetails();
+        savings.deposit(d);
+        savings.withdraw(2000);
+        CheckingAccount checking = new CheckingAccount(5678, 5000, "Raj");
+        checking.displayAccountDetails();
+        checking.deposit(6000);
+        checking.withdraw(2000);
+    }
+}
+
