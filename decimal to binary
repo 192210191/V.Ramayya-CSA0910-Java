@@ -1,23 +1,15 @@
-package saijava;
-import java.util.Scanner;
-public class pp {
-	public static void main(String [] arg)
-	{
-		Scanner input=new Scanner(System.in);
-		int dec=input.nextInt();
-		int index=0;
-		int bin[]=new int[32];
-		int t=dec;
-		while(t!=0)
-		{
-			bin[index]=t%2;
-			index++;
-			t/=2;
-		}
-		for(int i=index-1;i>=0;i--)
-		{
-			System.out.print(bin[i]+"");
-		}
-	}
-
+public class R192210191
+{
+  public static void main(String[] args)
+  {
+    int n=8,i=1,rem,binary=0;
+    while(n!=0)
+    {
+      rem=n%2;
+      binary+=i*rem;
+      n=n/2;
+      i=i*10;
+    }
+    System.out.print(binary);
+  }
 }
