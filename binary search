@@ -2,9 +2,10 @@ package saijava;
 public class pp {
 	public static void binarysearch(int arr[],int first,int last,int key)
 	{
-		int mid=(first+last)/2;
+		
 		while(first<=last)
 		{
+                        int mid=(first+last)/2;
 			if(arr[mid]<key)
 			{
 				first=mid+1;
@@ -17,7 +18,6 @@ public class pp {
 			else
 				last=mid-1;
 		}
-		mid=(first+last)/2;
 	}
 	public static void main(String [] arg)
 	{
